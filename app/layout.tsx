@@ -1,142 +1,259 @@
-import type React from "react"
+import Home from "@/components/home"
+import About from "@/components/about"
+import Skills from "@/components/skills"
+import Contact from "@/components/contact"
 import type { Metadata } from "next"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import NavBar from "@/components/nav-bar"
-import Footer from "@/components/footer"
 
+/* ================================
+   SEO METADATA
+================================ */
 export const metadata: Metadata = {
-  title: {
-    default: "Milan Sahoo - Junior Software Developer | Full Stack Portfolio",
-    template: "%s | Milan Sahoo Portfolio",
-  },
+  title:
+    "Milan Sahoo | Junior Software Developer at Digontom | Full Stack Engineer",
+
   description:
-    "I am Milan Sahoo, a Junior Software Developer passionate about creating impactful solutions using cutting-edge technologies. Student at Brainware University with expertise in full-stack development, AI, and IoT projects.",
+    "Milan Sahoo is a Junior Software Developer at Digontom specializing in Full Stack Development using React, Next.js, Node.js, MongoDB, Flask, AI, IoT, and Robotics. Diploma holder in Computer Science Engineering from Brainware University with research publications and real-world project experience.",
+
   keywords: [
     "Milan Sahoo",
     "Junior Software Developer",
+    "Digontom",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
-    "Brainware University",
-    "Web Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "JavaScript Developer",
-    "TypeScript Developer",
-    "AI Research",
+    "Node.js Developer",
+    "MongoDB",
+    "Express.js",
+    "Flask Developer",
+    "AI Projects",
     "IoT Projects",
     "Robotics",
-    "Software Engineer",
-    "AGNIRATH AEROSPACE",
-    "Web Development Portfolio",
-    "Software Engineering Portfolio",
-    "Kolkata Developer",
-    "India Developer",
-    "Full Stack Engineer",
-    "React.js Developer",
-    "Node.js Developer",
-    "MongoDB Developer",
-    "API Development",
-    "Responsive Web Design",
-    "Modern Web Applications",
-    "Tech Portfolio",
-    "Hire Developer",
-    "Freelance Developer",
+    "Brainware University",
+    "Software Engineer Portfolio India",
   ],
-  authors: [{ name: "Milan Sahoo", url: "https://github.com/Milan721166" }],
+
+  authors: [{ name: "Milan Sahoo" }],
   creator: "Milan Sahoo",
   publisher: "Milan Sahoo",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://react-protfilio.vercel.app"),
+  category: "Technology",
+  applicationName: "Milan Sahoo Portfolio",
+
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
     },
   },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://react-protfilio.vercel.app",
-    title: "Milan Sahoo - Junior Software Developer | Full Stack Portfolio",
-    description:
-      "Explore Milan Sahoo's portfolio showcasing full-stack development projects, AI research, and IoT solutions. Student at Brainware University specializing in modern web technologies.",
-    siteName: "Milan Sahoo Portfolio",
-    images: [
-      {
-        url: "/images/pic.png",
-        width: 1200,
-        height: 630,
-        alt: "Milan Sahoo - Junior Software Developer Portfolio",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Milan Sahoo - Junior Software Developer Portfolio",
-    description:
-      "Junior Software Developer passionate about creating impactful solutions with cutting-edge technologies. Full-stack development, AI, and IoT.",
-    images: ["/images/pic.png"],
-    creator: "@milansahoo",
-  },
+
   alternates: {
     canonical: "https://react-protfilio.vercel.app",
   },
-  generator: "Next.js",
-  applicationName: "Milan Sahoo Portfolio",
-  referrer: "origin-when-cross-origin",
-  category: "technology",
-  classification: "Portfolio Website",
-  verification: {
-    google: "google-site-verification-code",
-    yandex: "yandex-verification-code",
-    other: {
-      me: ["milan@example.com", "https://github.com/Milan721166"],
-    },
+
+  openGraph: {
+    title:
+      "Milan Sahoo | Junior Software Developer at Digontom | Full Stack Engineer",
+    description:
+      "Official portfolio of Milan Sahoo – Junior Software Developer at Digontom with expertise in Full Stack Development, AI, IoT, Robotics, and research publications.",
+    url: "https://react-protfilio.vercel.app",
+    siteName: "Milan Sahoo Portfolio",
+    images: [
+      {
+        url: "https://react-protfilio.vercel.app/images/pic.png",
+        width: 800,
+        height: 800,
+        alt: "Milan Sahoo",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Milan Sahoo | Junior Software Developer at Digontom",
+    description:
+      "Junior Software Developer at Digontom | Full Stack Engineer | AI | IoT | Robotics",
+    images: ["https://react-protfilio.vercel.app/images/pic.png"],
+    creator: "@milansahoo",
   },
 }
 
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: "#081b29",
-}
+/* ================================
+   PAGE COMPONENT
+================================ */
+export default function Page() {
+  /* -------- PERSON SCHEMA -------- */
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Milan Sahoo",
+    url: "https://react-protfilio.vercel.app",
+    image: "https://react-protfilio.vercel.app/images/pic.png",
+    jobTitle: "Junior Software Developer",
+    email: "mailto:milansahoo7211662005@gmail.com",
+    telephone: "+91-6296740204",
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        propertyID: "ORCID",
+        value: "https://orcid.org/0009-0007-0619-3682",
+      },
+      {
+        "@type": "PropertyValue",
+        propertyID: "GoogleScholar",
+        value:
+          "https://scholar.google.com/citations?hl=en&user=nv4z2z4AAAAJ",
+      },
+    ],
+
+    worksFor: [
+      {
+        "@type": "Organization",
+        name: "Digontom",
+        description: "Software development and technology solutions company",
+      },
+      {
+        "@type": "Organization",
+        name: "AGNIRATH AEROSPACE AND DEFENCE RESEARCH PRIVATE LIMITED",
+      },
+    ],
+
+    affiliation: {
+      "@type": "Organization",
+      name: "Digontom",
+    },
+
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Junior Software Developer",
+      occupationLocation: {
+        "@type": "Country",
+        name: "India",
+      },
+      skills: [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Flask",
+        "REST API",
+        "AI",
+        "IoT",
+        "Robotics",
+      ],
+    },
+
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "Brainware University",
+    },
+
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "West Medinipur",
+      addressRegion: "West Bengal",
+      addressCountry: "India",
+    },
+
+    knowsAbout: [
+      "Full Stack Development",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "Flask",
+      "AI",
+      "IoT",
+      "Robotics",
+      "REST API",
+      "Computer Networks",
+      "Data Structures and Algorithms",
+    ],
+
+    knowsLanguage: ["Bengali", "English", "Hindi"],
+
+    sameAs: [
+      "https://github.com/Milan721166",
+      "https://www.linkedin.com/in/milan-sahoo",
+      "https://twitter.com/milansahoo",
+      "https://orcid.org/0009-0007-0619-3682",
+      "https://scholar.google.com/citations?hl=en&user=nv4z2z4AAAAJ",
+    ],
+  }
+
+  /* -------- WEBSITE SCHEMA -------- */
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Milan Sahoo Portfolio",
+    url: "https://react-protfilio.vercel.app",
+    inLanguage: "en-IN",
+    author: {
+      "@type": "Person",
+      name: "Milan Sahoo",
+    },
+  }
+
+  /* -------- BREADCRUMB SCHEMA -------- */
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://react-protfilio.vercel.app/#home",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: "https://react-protfilio.vercel.app/#about",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Skills",
+        item: "https://react-protfilio.vercel.app/#skills",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Contact",
+        item: "https://react-protfilio.vercel.app/#contact",
+      },
+    ],
+  }
+
   return (
-    <html lang="en">
-      <body
-        style={{
-          margin: 0,
-          padding: 0,
-          boxSizing: "border-box",
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          color: "#ededed",
-          backgroundColor: "#081b29",
-        }}
-      >
-        <NavBar />
-        {children}
-        <Footer />
-        <Analytics />
-      </body>
-    </html>
+    <>
+      {/* JSON-LD STRUCTURED DATA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      {/* PAGE CONTENT */}
+      <main>
+        <Home />
+        <About />
+        <Skills />
+        <Contact />
+      </main>
+    </>
   )
 }
