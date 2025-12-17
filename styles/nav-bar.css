@@ -1,0 +1,156 @@
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  height: 72px; /* desktop height */
+  background-color: rgba(8, 27, 41, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  font-size: 25px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  color: #00abf0;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: color 0.3s;
+  opacity: 0;
+  animation: slideTop 0.4s ease forwards;
+  animation-delay: calc(0.15s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00abf0;
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: #ededed;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-toggle:active {
+  transform: scale(0.9);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 6%;
+    height: 56px; /* FIXED mobile height */
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(8, 27, 41, 0.98);
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar.active {
+    max-height: 480px;
+  }
+
+  .navbar a {
+    margin: 6px 0;
+    font-size: 18px;
+    opacity: 0;
+  }
+
+  .navbar.active a {
+    animation: slideDown 0.35s ease forwards;
+  }
+
+  .navbar.active a:nth-child(1) { animation-delay: 0.05s; }
+  .navbar.active a:nth-child(2) { animation-delay: 0.1s; }
+  .navbar.active a:nth-child(3) { animation-delay: 0.15s; }
+  .navbar.active a:nth-child(4) { animation-delay: 0.2s; }
+  .navbar.active a:nth-child(5) { animation-delay: 0.25s; }
+  .navbar.active a:nth-child(6) { animation-delay: 0.3s; }
+  .navbar.active a:nth-child(7) { animation-delay: 0.35s; }
+  .navbar.active a:nth-child(8) { animation-delay: 0.4s; }
+  .navbar.active a:nth-child(9) { animation-delay: 0.45s; }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .header {
+    padding: 18px 7%;
+  }
+
+  .navbar a {
+    margin-left: 25px;
+    font-size: 17px;
+  }
+}
