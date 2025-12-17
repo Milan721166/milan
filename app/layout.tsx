@@ -1,8 +1,14 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
+import NavBar from "@/components/nav-bar"
+import Footer from "@/components/footer"
 import Home from "@/components/home"
 import About from "@/components/about"
 import Skills from "@/components/skills"
 import Contact from "@/components/contact"
-import type { Metadata } from "next"
+
 
 /* ================================
    SEO METADATA
