@@ -255,10 +255,12 @@ export default function Page() {
 
       {/* PAGE CONTENT */}
       <main>
+        <NavBar />
         <Home />
         <About />
         <Skills />
         <Contact />
+        <Footer/>
       </main>
     </>
   )
