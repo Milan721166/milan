@@ -19,7 +19,9 @@ export const metadata: Metadata = {
 
   description:
     "Milan Sahoo is a Junior Software Developer at Digontom specializing in Full Stack Development using React, Next.js, Node.js, MongoDB, Flask, AI, IoT, and Robotics. Diploma holder in Computer Science Engineering from Brainware University with research publications and real-world project experience.",
-
+verification: {
+    google: 'mixHvlwk0rNoSeQl6Cm_xSxBlrA7Ixb2IPl76UViR9o',
+  },
   keywords: [
     "Milan Sahoo",
     "Junior Software Developer",
@@ -191,6 +193,7 @@ export default function Page() {
       "https://scholar.google.com/citations?hl=en&user=nv4z2z4AAAAJ",
     ],
   }
+
 
   /* -------- WEBSITE SCHEMA -------- */
   const websiteJsonLd = {
