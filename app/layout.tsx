@@ -55,20 +55,21 @@ verification: {
     },
   },
 
-  alternates: {
-    canonical: "https://react-protfilio.vercel.app",
-  },
+ alternates: {
+  canonical: "https://milansahoo.vercel.app",
+},
+
 
   openGraph: {
     title:
       "Milan Sahoo | Junior Software Developer at Digontom | Full Stack Engineer",
     description:
       "Official portfolio of Milan Sahoo – Junior Software Developer at Digontom with expertise in Full Stack Development, AI, IoT, Robotics, and research publications.",
-    url: "https://react-protfilio.vercel.app",
+    url: "https://milansahoo.vercel.app",
     siteName: "Milan Sahoo Portfolio",
     images: [
       {
-        url: "https://react-protfilio.vercel.app/images/pic.png",
+        url: "https://milansahoo.vercel.app/images/pic.png",
         width: 800,
         height: 800,
         alt: "Milan Sahoo",
@@ -83,7 +84,7 @@ verification: {
     title: "Milan Sahoo | Junior Software Developer at Digontom",
     description:
       "Junior Software Developer at Digontom | Full Stack Engineer | AI | IoT | Robotics",
-    images: ["https://react-protfilio.vercel.app/images/pic.png"],
+    images: ["https://milansahoo.vercel.app/images/pic.png"],
     creator: "@milansahoo",
   },
 }
